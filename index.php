@@ -11,7 +11,7 @@
 
 <script>
 
-function refresh_ec2(() {
+function refresh_ec2() {
 	$.ajax({
 		url: "aws.py",
 		data: {},
