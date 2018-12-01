@@ -29,6 +29,7 @@ instances = []
 for i in dis["Reservations"][0]["Instances"]:
 	vol = res.Volume(i["BlockDeviceMappings"][0]["Ebs"]["VolumeId"])
 	current = {
+		"id": i["InstanceId"],
 		"architecture": i["Architecture"],
 		"type": i["InstanceType"],
 		"last-launch": "{0:%d}.{0:%m}.{0:%Y} at {0:%H}:{0:%M}".format(i["LaunchTime"]),

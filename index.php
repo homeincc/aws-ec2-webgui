@@ -13,7 +13,9 @@
 
 
 function ajax_ec2(e) {
-	for (var i in e) {
+	for (var id in e) {
+		var i = e[id];
+		$("#ec2-content").append("<div class='ec2' data-ec2='"+i["id"]+"'>"+i["last-launch"]+"</div>");
 		alert(e[i]["last-launch"]);
 	}
 }
