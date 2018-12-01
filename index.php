@@ -11,6 +11,13 @@
 
 <script>
 
+
+function ajax_ec2(e) {
+	for (var i in e) {
+		alert(e[i]["last-launch"]);
+	}
+}
+
 function refresh_ec2() {
 	$.ajax({
 		url: "aws.py",
@@ -19,6 +26,8 @@ function refresh_ec2() {
 		dataType: "json"
 	});
 }
+
+
 
 
 $(document).ready(function () {
