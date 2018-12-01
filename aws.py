@@ -31,7 +31,7 @@ for i in dis["Reservations"][0]["Instances"]:
 	current = {
 		"architecture": i["Architecture"],
 		"type": i["InstanceType"],
-		"last-launch": i["LaunchTime"],
+		"last-launch": "{0:%d}.{0:%m}.{0:%Y} at {0:%H}:{0:%M}".format(i["LaunchTime"]),
 		"private-ip": i["PrivateIpAddress"],
 		"state": i["State"]["Name"],
 		"tags": i["Tags"],
