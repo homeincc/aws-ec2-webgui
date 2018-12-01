@@ -18,11 +18,10 @@ if (not os.path.exists("aws.json")):
 with open("aws.json") as conf_infile:
 	conf = json.load(conf_infile)
 	
-session = boto3.session(aws_access_key_id=conf["access_key_id"],aws_secret_access_key=conf["access_secret_key"],region_name=conf["region"])
+session = boto3.Session(aws_access_key_id=conf["access_key_id"],aws_secret_access_key=conf["access_secret_key"],region_name=conf["region"])
 ec2 = session.client("ec2")
 res = session.resource("ec2")
 
-print("Ahoj")
 
 dis = ec2.describe_instances()
 
