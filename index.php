@@ -22,7 +22,7 @@ function refresh_ec2() {
 	$.ajax({
 		url: "aws.py",
 		data: {},
-		success: function (e) {alert(e);},
+		success: ajax_ec2,
 		dataType: "json"
 	});
 }
