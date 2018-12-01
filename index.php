@@ -16,7 +16,7 @@ function refresh_ec2() {
 		url: "aws.py",
 		data: {},
 		success: function (e) {alert(e);},
-		dataType: "json"
+		dataType: "text"
 	});
 }
 
