@@ -7,9 +7,8 @@ import json
 import boto3
 import pprint
 
-print("Content-type:text/html\r\n\r\n")
+print("Content-type:application/json\r\n\r\n")
 
-print("<html><head><title></title></head><body>\r\n")
 
 if (not os.path.exists("aws.json")):
 	print("aws.json does not exist")
@@ -42,9 +41,8 @@ for i in dis["Reservations"][0]["Instances"]:
 
 
 
-pprint.pprint(instances)
+print(json.dumps(instances))
 
-print("</body></html")
 
 
 print("\r\n\r\n")
