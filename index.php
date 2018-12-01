@@ -9,13 +9,15 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<link rel="stylesheet" href="style.css">
+
 <script>
 
 
 function ajax_ec2(e) {
 	for (var id in e) {
 		var i = e[id];
-		$("#ec2-content").append("<div class='ec2' data-ec2='"+i["id"]+"'>"+i["last-launch"]+"</div>");
+		$("#ec2-content").append("<div class='ec2 state-"+i["state"]+"' data-ec2='"+i["id"]+"'>"+i["last-launch"]+"</div>");
 		alert(e[i]["last-launch"]);
 	}
 }
