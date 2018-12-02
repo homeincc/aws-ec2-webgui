@@ -21,8 +21,8 @@ function ajax_ec2(e) {
 		var ec2 = $("div[data-ec2="+i["id"]+"]");
 		ec2.append("<h2>"+i["architecture"]+" "+i["id"]+"</h2>");
 		ec2.append("<p>Status: "+i["state"]+"<br>Last launched on "+i["last-launch"]+"<br>Private IP: "+i["private-ip"]+"</p>");
-		for (var tname in i["tags"]) {
-			ec2.append("<p class='tags'>"+tname+" = "+i["tags"][tname]+"</p>");
+		for (var tid in i["tags"]) {
+			ec2.append("<p class='tags'>"+i["tags"][tid]["Key"]+" = "+i["tags"][tid]["Value"]+"</p>");
 		}
 		ec2.append("<p class='action'>&nbsp;</p>");
 	}
