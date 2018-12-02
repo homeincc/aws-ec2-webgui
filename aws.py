@@ -16,6 +16,14 @@ def _exit(msg=None):
 
 print("Content-type:application/json\n\n")
 
+query = {}
+
+qs = os.environ.get("QUERY_STRING","")
+
+if qs!="":
+	for arg in qs.split("&"):
+		name, val = arg.split("=")
+		query[name] = val
 
 
 if (not os.path.exists("aws.json")):
@@ -46,7 +54,7 @@ for i in dis["Reservations"][0]["Instances"]:
 		"state": i["State"]["Name"],
 		"tags": i["Tags"],
 		"size": vol.size,
-		"args": os.environ.get("QUERY_STRING","No query")
+		"args": query
 	}
 	instances.append(current)
 
