@@ -45,6 +45,11 @@ function refresh_handlers() {
 	$(".state-pending,.state-pending").hover(function () {
 		$(this).find("p.action").text("Please wait until the instance is in a fixed state...",function () {$(this).find("p.action").html("&nbsp;");});
 	});
+	
+	$(".ec2.state-stopped").click(function() {
+		var id = $(this).attr("data-ec2");
+		alert("Starting "+id);
+	});
 }
 
 function refresh_ec2() {
