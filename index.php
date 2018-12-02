@@ -42,7 +42,7 @@ function refresh_handlers() {
 		$(this).find("p.action").text("Click to stop instance...",function () {$(this).find("p.action").html("&nbsp;");});
 	});
 	
-	$(".state-pending").hover(function () {
+	$(".state-pending,.state-pending").hover(function () {
 		$(this).find("p.action").text("Please wait until the instance is in a fixed state...",function () {$(this).find("p.action").html("&nbsp;");});
 	});
 }
