@@ -30,12 +30,6 @@ ec2 = session.client("ec2")
 res = session.resource("ec2")
 
 
-if "action" in data:
-	if data["action"]=="start":
-		if not "id" in data:
-			print(json.dumps({"error": "No ID specified"}))
-			_exit()
-
 
 dis = ec2.describe_instances()
 
