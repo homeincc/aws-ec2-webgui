@@ -80,6 +80,6 @@ a.refresh
 a.refresh:hover
 {
 	text-decoration: none;
-	font-weight: bold;
+	transform: scale(1.2);
 	color: #a0a0a0;
 }
