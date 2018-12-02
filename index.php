@@ -53,7 +53,7 @@ function refresh_handlers() {
 			url: "aws.py",
 			data: {"action": "start"},
 			success: function (e) {alert(JSON.stringify(e));},
-			dataType: "json"
+			dataType: "text"
 		});
 	});
 }
