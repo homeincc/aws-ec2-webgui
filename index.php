@@ -55,6 +55,7 @@ function refresh_handlers() {
 			url: "aws.py",
 			data: {"action": "start", "id": id},
 			success: ajax_status,
+			error: function(e) {console.log(e);},
 			dataType: "json"
 		});
 	});
