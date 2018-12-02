@@ -13,4 +13,6 @@ state-stopped
 	background-image: url("loader.gif");
 	background-position: center center;
 	background-repeat: no-repeat;
+	display: none;
+	opacity: 0.5;
 }

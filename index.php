@@ -19,9 +19,16 @@ function ajax_ec2(e) {
 		var i = e[id];
 		$("#ec2-content").append("<div class='ec2 state-"+i["state"]+"' data-ec2='"+i["id"]+"'>"+i["last-launch"]+"</div>");
 	}
+	progress(false);
+}
+
+
+function progress(var t=true) {
+	$(".loader").css("display",t==true ? "block" : "none");
 }
 
 function refresh_ec2() {
+	progress(true);
 	$.ajax({
 		url: "aws.py",
 		data: {},
