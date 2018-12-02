@@ -48,6 +48,7 @@ if "action" in query:
 			_err("No ID specified")
 			_exit()
 		_err("Running...")
+		_exit()
 
 
 dis = ec2.describe_instances()
