@@ -12,7 +12,7 @@ print("Content-type:application/json\r\n\r\n")
 
 data = cgi.FieldStorage()
 
-print(json.dumps(data))
+print(json.dumps(data if data!=None else ""))
 
 if (not os.path.exists("aws.json")):
 	print("aws.json does not exist")
