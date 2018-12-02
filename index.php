@@ -21,7 +21,7 @@ function ajax_ec2(e) {
 		var ec2 = $("div[data-ec2="+i["id"]+"]");
 		ec2.append("<h2>"+i["architecture"]+" "+i["id"]+"</h2>");
 		ec2.append("<p>Status: "+i["state"]+"<br>Last launched on "+i["last-launch"]+"<br>Private IP: "+i["private-ip"]+"</p>");
-		ec2.append("<p class='action'></p>");
+		ec2.append("<p class='action'>&nbsp;</p>");
 	}
 	progress(false);
 }
@@ -46,6 +46,19 @@ function refresh_ec2() {
 
 $(document).ready(function () {
 	refresh_ec2();
+	
+	$(".ec2.state-stopped").click(function () {
+		$(this).find("p.action").text("Click to launch instance...");
+	});
+	
+	$(".ec2.state-running").click(function () {
+		$(this).find("p.action").text("Click to stop instance...");
+	});
+	
+	$(".ec2.state-pending").click(function () {
+		$(this).find("p.action").text("Please wait until the instance is in a fixed state...");
+	});
+	
 });
 
 </script>
