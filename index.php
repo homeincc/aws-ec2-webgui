@@ -61,7 +61,12 @@ function refresh_ec2() {
 
 $(document).ready(function () {
 	refresh_ec2();
-		
+	
+	$("a.refresh").click(function () {
+		refresh_ec2();
+		return false;
+	});
+	
 });
 
 </script>
