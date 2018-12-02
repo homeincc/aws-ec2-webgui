@@ -50,7 +50,13 @@ if "action" in query:
 		ec2.start_instances(InstanceIds=[query["id"]])
 		print(json.dumps({"status": "ok"}))
 		_exit()
-
+	elif query["action"]=="stop":
+		if not "id" in query:
+			_err("No ID specified")
+			_exit()
+		ec2.stop_instances(InstanceIds=[query["id"]])
+		print(json.dumps({"status": "ok"}))
+		_exit()
 
 dis = ec2.describe_instances()
 

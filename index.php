@@ -65,6 +65,18 @@ function refresh_handlers() {
 			dataType: "json"
 		});
 	});
+	
+	$(".ec2.state-running").click(function() {
+		progress(true);
+		var id = $(this).attr("data-ec2");
+		$.ajax({
+			url: "aws.py",
+			data: {"action": "stop", "id": id},
+			success: ajax_status,
+			error: function(e) {console.log(e);},
+			dataType: "json"
+		});
+	});
 }
 
 function refresh_ec2() {
