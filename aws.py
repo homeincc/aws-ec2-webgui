@@ -9,6 +9,9 @@ import pprint
 import cgi
 
 
+def _err(msg):
+	print(json.dumps({"error": msg}))
+
 def _exit(msg=None):
 	if msg!=None: print(msg)
 	print("\n\n")
@@ -27,8 +30,8 @@ if qs!="":
 
 
 if (not os.path.exists("aws.json")):
-	print(json.dumps({"error": "aws.json does not exist"}))
-	sys.exit(0)
+	_err("aws.json does not exist")
+	_exit()
 
 with open("aws.json") as conf_infile:
 	conf = json.load(conf_infile)
@@ -37,6 +40,13 @@ session = boto3.Session(aws_access_key_id=conf["access_key_id"],aws_secret_acces
 ec2 = session.client("ec2")
 res = session.resource("ec2")
 
+
+if "action" in query:
+	if query["action"]=="start":
+		if not "id" in query:
+			_err("No ID specified")
+			_exit()
+		_err("Running...")
 
 
 dis = ec2.describe_instances()

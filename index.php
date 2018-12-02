@@ -30,6 +30,11 @@ function ajax_ec2(e) {
 	progress(false);
 }
 
+function ajax_status(e) {
+	if ("error" in e) {
+		alert(e["error"]);
+	}
+}
 
 function progress(t=true) {
 	$(".loader").css("display",t==true ? "block" : "none");
@@ -51,8 +56,8 @@ function refresh_handlers() {
 		$.ajax({
 			url: "aws.py",
 			data: {"action": "start", "id": id},
-			success: function (e) {alert(JSON.stringify(e));},
-			dataType: "text"
+			success: ajax_status,
+			dataType: "json"
 		});
 	});
 }
