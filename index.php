@@ -31,7 +31,12 @@ function ajax_ec2(e) {
 }
 
 function ajax_status(e) {
-	if ("error" in e) alert(e["error"]);
+	if ("error" in e) {
+		alert(e["error"]);
+		progress(false);
+		return;
+	}
+	refresh_ec2();
 }
 
 function progress(t=true) {
@@ -50,6 +55,7 @@ function refresh_handlers() {
 	});
 	
 	$(".ec2.state-stopped").click(function() {
+		progress(true);
 		var id = $(this).attr("data-ec2");
 		$.ajax({
 			url: "aws.py",

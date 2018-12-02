@@ -47,7 +47,8 @@ if "action" in query:
 		if not "id" in query:
 			_err("No ID specified")
 			_exit()
-		_err("Running...")
+		ec2.start_instances(InstanceIds=[query["id"]])
+		print(json.dumps({"status": "ok"}))
 		_exit()
 
 
