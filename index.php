@@ -23,7 +23,7 @@ function ajax_ec2(e) {
 }
 
 
-function progress(var t=true) {
+function progress(t=true) {
 	$(".loader").css("display",t==true ? "block" : "none");
 }
 
