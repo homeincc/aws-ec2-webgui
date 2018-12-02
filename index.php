@@ -48,10 +48,9 @@ function refresh_handlers() {
 	
 	$(".ec2.state-stopped").click(function() {
 		var id = $(this).attr("data-ec2");
-		alert("Starting "+id);
 		$.ajax({
 			url: "aws.py",
-			data: {"action": "start"},
+			data: {"action": "start", "id": id},
 			success: function (e) {alert(JSON.stringify(e));},
 			dataType: "text"
 		});
