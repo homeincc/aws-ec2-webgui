@@ -46,5 +46,8 @@ $(document).ready(function () {
 
 </div>
 
+<div class="loader">
+</div>
+
 </body>
 </html>
