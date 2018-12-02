@@ -9,6 +9,10 @@ div.ec2:hover
 {
 	cursor: pointer;
 }
+div.ec2:active
+{
+	border-style: inset;
+}
 
 div.state-stopped
 {
