@@ -51,6 +51,7 @@ $(document).ready(function () {
 	refresh_ec2();
 	
 	$(".state-stopped").hover(function () {
+		alert("over");
 		$(this).find("p.action").text("Click to launch instance...");
 	});
 	
