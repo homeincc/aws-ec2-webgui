@@ -73,6 +73,10 @@ $(document).ready(function () {
 
 </div>
 
+<div class="refresh">
+<a class="refresh" href="#">&#x21ba;&nbsp;Refresh</a>
+</div>
+
 <div class="loader">
 </div>
 

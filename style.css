@@ -63,3 +63,16 @@ p.tags
 {
 	font-style: italic;
 }
+
+div.refresh
+{
+	position: fixed;
+	top: 15px;
+	left: 15px;
+	background: rgba(255,255,255,0.4);
+}
+a.refresh
+{
+	font-size: 18px;
+	color: #505050;
+}
