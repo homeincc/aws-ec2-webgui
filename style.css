@@ -76,3 +76,8 @@ a.refresh
 	font-size: 18px;
 	color: #505050;
 }
+a.refresh:hover
+{
+	text-decoration: none;
+	transform: scale(1.1);
+}
