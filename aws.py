@@ -46,7 +46,7 @@ for i in dis["Reservations"][0]["Instances"]:
 		"state": i["State"]["Name"],
 		"tags": i["Tags"],
 		"size": vol.size,
-		"args": sys.argv
+		"args": os.environ.get("QUERY_STRING","No query")
 	}
 	instances.append(current)
 
