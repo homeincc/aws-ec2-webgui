@@ -36,17 +36,14 @@ function progress(t=true) {
 }
 
 function refresh_handlers() {
-	$(".state-stopped").hover(function () {
-		alert("yes");
-		$(this).find("p.action").text("Click to launch instance...");
-	});
+	$(".state-stopped").hover(function () {$(this).find("p.action").text("Click to launch instance...");},function () {$(this).find("p.action").html("&nbsp;");});
 	
 	$(".state-running").hover(function () {
-		$(this).find("p.action").text("Click to stop instance...");
+		$(this).find("p.action").text("Click to stop instance...",function () {$(this).find("p.action").html("&nbsp;");});
 	});
 	
 	$(".state-pending").hover(function () {
-		$(this).find("p.action").text("Please wait until the instance is in a fixed state...");
+		$(this).find("p.action").text("Please wait until the instance is in a fixed state...",function () {$(this).find("p.action").html("&nbsp;");});
 	});
 }
 
