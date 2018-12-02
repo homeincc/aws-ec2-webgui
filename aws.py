@@ -16,9 +16,6 @@ def _exit(msg=None):
 
 print("Content-type:application/json\n\n")
 
-data = cgi.FieldStorage()
-
-print(data)
 
 
 if (not os.path.exists("aws.json")):
@@ -54,7 +51,8 @@ for i in dis["Reservations"][0]["Instances"]:
 		"private-ip": i["PrivateIpAddress"],
 		"state": i["State"]["Name"],
 		"tags": i["Tags"],
-		"size": vol.size
+		"size": vol.size,
+		"args": sys.argv
 	}
 	instances.append(current)
 
