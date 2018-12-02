@@ -34,3 +34,8 @@ div.state-stopped:hover
 	display: none;
 	opacity: 0.5;
 }
+
+p.tags
+{
+	font-style: italic;
+}

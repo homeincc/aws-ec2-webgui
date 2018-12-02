@@ -50,15 +50,15 @@ function refresh_ec2() {
 $(document).ready(function () {
 	refresh_ec2();
 	
-	$(".ec2.state-stopped").click(function () {
+	$(".state-stopped").hover(function () {
 		$(this).find("p.action").text("Click to launch instance...");
 	});
 	
-	$(".ec2.state-running").click(function () {
+	$(".state-running").hover(function () {
 		$(this).find("p.action").text("Click to stop instance...");
 	});
 	
-	$(".ec2.state-pending").click(function () {
+	$(".state-pending").hover(function () {
 		$(this).find("p.action").text("Please wait until the instance is in a fixed state...");
 	});
 	
