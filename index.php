@@ -31,7 +31,7 @@ function ajax_ec2(e) {
 }
 
 function ajax_status(e) {
-	alert(JSON.stringify(e));
+	if ("error" in e) alert(e["error"]);
 }
 
 function progress(t=true) {
