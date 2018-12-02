@@ -12,6 +12,8 @@ div.ec2:hover
 div.ec2:active
 {
 	border-style: inset;
+	background: rgba(0,0,0,0.3);
+	transform: scale(80%);
 }
 
 div.state-stopped
