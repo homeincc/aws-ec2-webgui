@@ -26,6 +26,7 @@ function ajax_ec2(e) {
 		}
 		ec2.append("<p class='action'>&nbsp;</p>");
 	}
+	refresh_handlers();
 	progress(false);
 }
 
@@ -57,7 +58,6 @@ function refresh_ec2() {
 		success: ajax_ec2,
 		dataType: "json"
 	});
-	refresh_handlers();
 }
 
 
