@@ -6,9 +6,13 @@ import sys
 import json
 import boto3
 import pprint
+import cgi
 
 print("Content-type:application/json\r\n\r\n")
 
+data = cgi.FieldStorage()
+
+print(json.dumps(data))
 
 if (not os.path.exists("aws.json")):
 	print("aws.json does not exist")
