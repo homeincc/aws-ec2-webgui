@@ -49,6 +49,7 @@ function refresh_handlers() {
 
 function refresh_ec2() {
 	progress(true);
+	$("#ec2-content").empty();
 	$.ajax({
 		url: "aws.py",
 		data: {},
