@@ -15,6 +15,7 @@ def _err(msg):
 def _exit(msg=None):
 	if msg!=None: print(msg)
 	print("\n\n")
+	sys.exit(0)
 
 
 print("Content-type:application/json\n\n")
