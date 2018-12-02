@@ -8,15 +8,18 @@ import boto3
 import pprint
 import cgi
 
-print("Content-type:application/json\r\n\r\n")
+
+def _exit(msg=None):
+	if msg!=None: print(msg)
+	print("\n\n")
+
+
+print("Content-type:application/json\n\n")
 
 data = cgi.FieldStorage()
 
-for name in data:
-	print(name,data[name])
-
 if (not os.path.exists("aws.json")):
-	print("aws.json does not exist")
+	print(json.dumps({"error": "aws.json does not exist"}))
 	sys.exit(0)
 
 with open("aws.json") as conf_infile:
@@ -25,6 +28,13 @@ with open("aws.json") as conf_infile:
 session = boto3.Session(aws_access_key_id=conf["access_key_id"],aws_secret_access_key=conf["access_secret_key"],region_name=conf["region"])
 ec2 = session.client("ec2")
 res = session.resource("ec2")
+
+
+if "action" in data:
+	if data["action"]=="start":
+		if not "id" in data:
+			print(json.dumps({"error": "No ID specified"}))
+			_exit()
 
 
 dis = ec2.describe_instances()
@@ -51,4 +61,4 @@ print(json.dumps(instances))
 
 
 
-print("\r\n\r\n")
+_exit()
