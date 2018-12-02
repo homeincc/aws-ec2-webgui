@@ -21,6 +21,7 @@ function ajax_ec2(e) {
 		var ec2 = $("div[data-ec2="+i["id"]+"]");
 		ec2.append("<h2>"+i["architecture"]+" "+i["id"]+"</h2>");
 		ec2.append("<p>Status: "+i["state"]+"<br>Last launched on "+i["last-launch"]+"<br>Private IP: "+i["private-ip"]+"</p>");
+		ec2.append("<p class='action'></p>");
 	}
 	progress(false);
 }

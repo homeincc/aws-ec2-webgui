@@ -1,14 +1,25 @@
 div.ec2
 {
-	padding: 48px;
+	padding: 24px 48px;
 	border-radius: 25px;
 	border: 3px solid grey;
+	transition: all 750ms;
+}
+div.ec2:hover
+{
+	cursor: pointer;
 }
 
 div.state-stopped
 {
 	background: rgba(200,0,0,0.3);
 }
+
+div.state-stopped:hover
+{
+	background: rgba(0,200,0,0.3);
+}
+
 
 .loader
 {
