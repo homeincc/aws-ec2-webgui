@@ -12,7 +12,7 @@ div.ec2:hover
 div.ec2:active
 {
 	border-style: inset;
-	transform: scale(0.95);
+	transform: scale(0.98);
 }
 
 div.state-stopped
