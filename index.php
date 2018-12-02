@@ -34,24 +34,8 @@ function progress(t=true) {
 	$(".loader").css("display",t==true ? "block" : "none");
 }
 
-function refresh_ec2() {
-	progress(true);
-	$.ajax({
-		url: "aws.py",
-		data: {},
-		success: ajax_ec2,
-		dataType: "json"
-	});
-}
-
-
-
-
-$(document).ready(function () {
-	refresh_ec2();
-	
+function refresh_handlers() {
 	$(".state-stopped").hover(function () {
-		alert("over");
 		$(this).find("p.action").text("Click to launch instance...");
 	});
 	
@@ -62,7 +46,24 @@ $(document).ready(function () {
 	$(".state-pending").hover(function () {
 		$(this).find("p.action").text("Please wait until the instance is in a fixed state...");
 	});
-	
+}
+
+function refresh_ec2() {
+	progress(true);
+	$.ajax({
+		url: "aws.py",
+		data: {},
+		success: ajax_ec2,
+		dataType: "json"
+	});
+	refresh_handlers();
+}
+
+
+
+$(document).ready(function () {
+	refresh_ec2();
+		
 });
 
 </script>
