@@ -36,6 +36,7 @@ function progress(t=true) {
 
 function refresh_handlers() {
 	$(".state-stopped").hover(function () {
+		alert("yes");
 		$(this).find("p.action").text("Click to launch instance...");
 	});
 	
